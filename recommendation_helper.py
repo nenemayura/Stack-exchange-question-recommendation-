@@ -1,4 +1,3 @@
-import os
 import xml.etree.ElementTree as xml
 from dataset_helper import extract_data
 import cassandra_helper
