@@ -9,10 +9,10 @@ To run the code -
   
   
   
-  Download Stack Exchange dataset
+  Download Stack Exchange dataset -  https://archive.org/details/stackexchange
   
-  Use python 2.7
+  Use python 2.7 
   
-  Install and Run Cassandra-3 on the system
+  Install and Run Cassandra-3 on the system 
   
   run python driver.py
