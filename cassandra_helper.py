@@ -1,22 +1,20 @@
-from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster
-from cassandra.query import SimpleStatement
-
-#KEYSPACE = "testkeysppace"
 cluster = Cluster(['127.0.0.1'])
 session = cluster.connect()
-session.set_keyspace('mykeyspace')
+
+session.set_keyspace('stackexchageanalysis')
 
 
 def create_recommended_posts_column_family():
     session.execute("""
-        CREATE COLUMNFAMILY RecommendedPosts
+        CREATE COLUMNFAMILY IF NOT EXISTS RecommendedPosts
             (
                 UserID TEXT
-                ,Questions TEXT
+                ,Questions LIST<TEXT>
                 ,  PRIMARY KEY (UserID)
             );
     """)
+
 
 def insert_values_in_recommended_posts_column_family(userid, questions):
     session.execute("""
@@ -35,5 +33,10 @@ def get_recommeded_questions_for_user():
 
     return result
 
+
+def drop_table():
+    session.execute("""
+    DROP COLUMNFAMILY "mykeyspace"."recommendedposts"
+    """, )
 
 
