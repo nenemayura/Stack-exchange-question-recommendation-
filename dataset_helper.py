@@ -13,6 +13,8 @@ class dataset_helper:
 
 
 def extract_data():
+
+    # path for the dataset
     path = "D://Masters//Sem 1//5751- Big Data//project//Final_project_stackexhange//windows_phone"
     for filename in os.listdir(path):
         data_source = os.path.join(path, filename)
@@ -25,12 +27,3 @@ def extract_data():
 
     return users_file, posts_file, postlinks_file
 
-
-
-if __name__ == '__main__':
-    path = "D://Masters//Sem 1//5751- Big Data//project//Final_project_stackexhange//windows_phone"
-    data_source = "D:\Internship and placement\study material\leetcode github\Pegasus\Stage1"
-
-    walk = os.walk(data_source)
-    data_source_directories = [x for x in walk]
-    data_source_directories = data_source_directories[0]
