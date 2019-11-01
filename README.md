@@ -16,3 +16,6 @@ To run the code -
   Install and Run Cassandra-3 on the system 
   
   run python driver.py
+
+
+After executing this command, Cassandra on the system will have column family recommended questions containing user ID and questions suggested to user. 
